@@ -66,7 +66,7 @@
             Console.WriteLine("+----+------------+---------+-----------------+------------------+-----------------+");
             foreach (var extension in extensions)
             {
-                Console.WriteLine($"| {extension.Rank,-2} | {extension.Extension,-10} | {extension.Count,-7:N0} | {extension.TotalSize,-15} | {extension.PercentCount,-16:F2} | {extension.PercentSize,-15:F2} |");
+                Console.WriteLine($"| {extension.Rank,-2} | {extension.Extension,-10} | {extension.Count,-7} | {extension.TotalSize,-15} | {extension.PercentCount,-16:F2} | {extension.PercentSize,-15:F2} |");
             }
             Console.WriteLine("+----+------------+---------+-----------------+------------------+-----------------+");
             Console.WriteLine($"| TOTAL:          | {totalFiles,-7} | {totalSize,-15} | 100.00           | 100.00          |");

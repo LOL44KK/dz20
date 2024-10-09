@@ -47,17 +47,18 @@
             long totalSize = fileStats.Sum(f => f.Value.TotalSize);
 
             var extensions = fileStats
-                   .OrderByDescending(f => f.Value.Count)
-                   .Take(25)
-                   .Select((f, index) => new FileExtensionInfo
-                   {
-                       Rank = index + 1,
-                       Extension = f.Key,
-                       Count = f.Value.Count,
-                       TotalSize = f.Value.TotalSize,
-                       PercentCount = (double)f.Value.Count / totalFiles * 100,
-                       PercentSize = (double)f.Value.TotalSize / totalSize * 100
-                   }).ToList();
+                .OrderByDescending(f => f.Value.Count)
+                .Take(25)
+                .Select((f, index) => new FileExtensionInfo
+                {
+                    Rank = index + 1,
+                    Extension = f.Key,
+                    Count = f.Value.Count,
+                    TotalSize = f.Value.TotalSize,
+                    PercentCount = (double)f.Value.Count / totalFiles * 100,
+                    PercentSize = (double)f.Value.TotalSize / totalSize * 100
+                }
+            ).ToList();
 
 
             Console.WriteLine("+----+------------+---------+-----------------+------------------+-----------------+");
